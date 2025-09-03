@@ -2,8 +2,48 @@
     <div class="app">
         <div class="box slds-text-align_center">
             <h1>BMI Calculator</h1>
-            <form>
-                <!-- form content will come here -->
+            <form onsubmit={submitHandler}>
+                <div class="slds-form-element slds-var-m-bottom_medium">
+                    <label class="slds-form-element__label slds-text-title_bold" for="text-input-height"
+                        >Height(cm)</label
+                    >
+                    <div class="slds-form-element__control">
+                        <input
+                            type="number"
+                            min="0"
+                            id="text-input-height"
+                            placeholder="Enter your height in cm"
+                            required
+                            class="slds-input"
+                            name="height"
+                            value={height}
+                            onchange={inputHandler}
+                        />
+                    </div>
+                </div>
+                <div class="slds-form-element slds-var-m-bottom_medium">
+                    <label class="slds-form-element__label slds-text-title_bold" for="text-input-weight"
+                        >Weight(kg)</label
+                    >
+                    <div class="slds-form-element__control">
+                        <input
+                            type="number"
+                            min="0"
+                            id="text-input-weight"
+                            placeholder="Enter your weight in kg"
+                            required
+                            class="slds-input"
+                            name="weight"
+                            value={weight}
+                            onchange={inputHandler}
+                        />
+                    </div>
+                </div>
+                <button
+                    class="slds-button slds-button_neutral slds-button_stretch custom-button slds-var-m-bottom_large"
+                >
+                    Calculate
+                </button>
             </form>
 
             <div class="info-wrapper">
