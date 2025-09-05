@@ -37,3 +37,9 @@ button {
 img {
     margin: 20px auto;
 }
+.custom-label {
+    color: var(--light-blue);
+}
+.custom-select {
+    color: var(--dark-blue);
+}
