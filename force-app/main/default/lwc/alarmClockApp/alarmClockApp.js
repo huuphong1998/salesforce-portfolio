@@ -8,6 +8,11 @@ export default class AlarmClockApp extends LightningElement {
     hours = [];
     minutes = [];
     meridiems = ["AM", "PM"];
+
+    hourSelected;
+    minSelected;
+    meridiemSelected;
+
     connectedCallback() {
         this.createHoursOptions();
         this.createMinutesOptions();
@@ -49,5 +54,21 @@ export default class AlarmClockApp extends LightningElement {
             let val = i < 10 ? `0${i}` : i;
             this.minutes.push(val);
         }
+    }
+
+    optionhandler(event) {
+        const { label, value } = event.detail;
+        if (label === "Hour(s)") {
+            this.hourSelected = value;
+        } else if (label === "Minute(s)") {
+            this.minSelected = value;
+        } else if (label === "AM/PM") {
+            this.meridiemSelected = value;
+        } else {
+        }
+
+        console.log("this.hourSelected", this.hourSelected);
+        console.log("this.minSelected", this.minSelected);
+        console.log("this.meridiemSelected", this.meridiemSelected);
     }
 }
