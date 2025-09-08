@@ -8,10 +8,16 @@ export default class AlarmClockApp extends LightningElement {
     hours = [];
     minutes = [];
     meridiems = ["AM", "PM"];
+    alarmTime;
+    isAlarmSet = false;
 
     hourSelected;
     minSelected;
     meridiemSelected;
+
+    get isFieldNotSelected() {
+        return !(this.hourSelected && this.minSelected && this.meridiemSelected);
+    }
 
     connectedCallback() {
         this.createHoursOptions();
@@ -40,6 +46,9 @@ export default class AlarmClockApp extends LightningElement {
             sec = sec < 10 ? "0" + sec : sec;
 
             this.currentTime = `${hour}:${min}:${sec} ${ampm}`;
+            if (this.alarmTime === `${hour}:${min} ${ampm}`) {
+                console.log("Alarm Trigger!");
+            }
         }, 1000);
     }
 
@@ -71,5 +80,10 @@ export default class AlarmClockApp extends LightningElement {
         console.log("this.hourSelected", this.hourSelected);
         console.log("this.minSelected", this.minSelected);
         console.log("this.meridiemSelected", this.meridiemSelected);
+    }
+
+    setAlarmHandler() {
+        this.alarmTime = `${this.hourSelected}:${this.minSelected} ${this.meridiemSelected}`;
+        this.isAlarmSet = true;
     }
 }

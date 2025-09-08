@@ -29,7 +29,11 @@
                 ></c-clock-dropdown>
             </div>
         </div>
-        <button class="slds-button slds-button_neutral slds-button_stretch">
+        <button
+            class="slds-button slds-button_neutral slds-button_stretch"
+            disabled={isFieldNotSelected}
+            onclick={setAlarmHandler}
+        >
             <label>Set Alarm</label>
         </button>
     </div>
