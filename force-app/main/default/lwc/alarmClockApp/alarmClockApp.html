@@ -29,12 +29,20 @@
                 ></c-clock-dropdown>
             </div>
         </div>
-        <button
-            class="slds-button slds-button_neutral slds-button_stretch"
-            disabled={isFieldNotSelected}
-            onclick={setAlarmHandler}
-        >
-            <label>Set Alarm</label>
-        </button>
+        <template if:false={alarmTime}>
+            <button
+                class="slds-button slds-button_neutral slds-button_stretch"
+                disabled={isFieldNotSelected}
+                onclick={setAlarmHandler}
+            >
+                <label>Set Alarm</label>
+            </button>
+        </template>
+
+        <template if:true={alarmTime}>
+            <button class="slds-button slds-button_neutral slds-button_stretch" onclick={clearAlarmHandler}>
+                <label>Clear Alarm</label>
+            </button>
+        </template>
     </div>
 </template>
