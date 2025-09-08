@@ -65,6 +65,7 @@ export default class AlarmClockApp extends LightningElement {
         } else if (label === "AM/PM") {
             this.meridiemSelected = value;
         } else {
+            console.log("No options selected");
         }
 
         console.log("this.hourSelected", this.hourSelected);
