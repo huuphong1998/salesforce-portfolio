@@ -2,7 +2,7 @@
     <div class="currency-app">
         <div class="container slds-grid slds-grid_align-center slds-media_center">
             <div class="slds-card custom-card">
-                <form>
+                <form onsubmit={submitHandler}>
                     <h1
                         class="slds-text-heading_large slds-text-color_inverse slds-text-align_center slds-var-m-bottom_large"
                     >
@@ -17,6 +17,7 @@
                         variant="label-hidden"
                         required
                         class="slds-var-m-vertical_x-large"
+                        onchange={handleChange}
                     ></lightning-input>
                     <div class="slds-grid slds-gutters slds-grid_align-spread baseline slds-var-m-vertical_x-large">
                         <div class="slds-col">
