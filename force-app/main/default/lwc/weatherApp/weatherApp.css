@@ -1,0 +1,40 @@
+.app {
+    background: #091f43;
+    height: 100vh;
+}
+
+.app-card {
+    background: #ffffff;
+    max-width: 400px;
+    min-width: 375px;
+    border-radius: 8px;
+}
+
+header {
+    font-size: 28px;
+    color: #091f43;
+    padding: 16px;
+    border-bottom: 1px solid #ccc;
+    font-weight: 500;
+}
+
+input {
+    padding: 16px;
+    height: 55px;
+    font-size: 24px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+input::placeholder {
+    color: #bfbfbf;
+}
+
+button {
+    background: #ed2144;
+    height: 55px;
+    border: none;
+    font-size: 24px;
+    border-radius: 8px;
+    color: white;
+}

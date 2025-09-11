@@ -1,3 +1,24 @@
+<!-- sldsValidatorIgnore -->
 <template>
-    <h1>Weather App</h1>
+    <div class="app slds-grid slds-grid_align-center slds-media_center">
+        <div class="app-card">
+            <header class="slds-grid slds-grid_align-center slds-media_center">
+                <h1>Weather App</h1>
+            </header>
+            <section class="slds-p-around_large">
+                <form>
+                    <input
+                        type="text"
+                        placeholder="Enter city name"
+                        required
+                        spellcheck="false"
+                        class="slds-container_fluid slds-text-align_center slds-text-link_reset:active"
+                    />
+                    <button type="submit" class="slds-var-m-top_large slds-container_fluid slds-text-link_reset:active">
+                        Search
+                    </button>
+                </form>
+            </section>
+        </div>
+    </div>
 </template>
