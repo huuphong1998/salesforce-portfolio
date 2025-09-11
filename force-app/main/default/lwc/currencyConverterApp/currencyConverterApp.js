@@ -16,6 +16,8 @@ export default class CurrencyConverterApp extends LightningElement {
         console.log("name", name);
         console.log("value", value);
         this[name] = value;
+        this.result = "";
+        this.error = "";
     }
 
     submitHandler(event) {
@@ -24,11 +26,14 @@ export default class CurrencyConverterApp extends LightningElement {
     }
 
     async convert() {
-        const API_URL = `https://api.exchangerate.host/convert?access_key=b6bc418327d6e052683dd80de195ca2d&from=${this.countryFrom}&to=${this.countryTo}&amount=1&format=1`;
+        const API_KEY = "5f3ace4727d10e490c7d0019";
+        const API_URL = `https://v6.exchangerate-api.com/v6/${API_KEY}/pair/${this.countryFrom}/${this.countryTo}`;
         try {
             const data = await fetch(API_URL);
             const jsonData = await data.json();
-            this.result = (Number(this.amount) * jsonData.result).toFixed(2);
+            console.log({ jsonData });
+            // this.result = (Number(this.amount) * jsonData.result).toFixed(2);
+            this.result = (Number(this.amount) * jsonData.conversion_rate).toFixed(2);
             console.log(this.result);
         } catch (error) {
             console.log(error);
