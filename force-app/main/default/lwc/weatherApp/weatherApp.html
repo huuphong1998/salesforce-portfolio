@@ -5,6 +5,9 @@
             <header class="slds-grid slds-grid_align-center slds-media_center">
                 <h1>Weather App</h1>
             </header>
+            <template if:true={loadingText}>
+                <div class={loadingClasses}>{loadingText}</div>
+            </template>
             <section class="slds-p-around_large">
                 <form onsubmit={submitHandler}>
                     <input
