@@ -1,7 +1,19 @@
 import { LightningElement } from "lwc";
 
 const API_KEY = "279c8910fc4645fec7582834d1e843a9";
+import WEATHER_ICONS from "@salesforce/resourceUrl/weatherAppIcons";
 export default class WeatherApp extends LightningElement {
+    clearIcon = WEATHER_ICONS + "/weatherAppIcons/clear.svg";
+    cloudIcon = WEATHER_ICONS + "/weatherAppIcons/cloud.svg";
+    dropletIcon = WEATHER_ICONS + "/weatherAppIcons/droplet.svg";
+    hazeIcon = WEATHER_ICONS + "/weatherAppIcons/haze.svg";
+    mapIcon = WEATHER_ICONS + "/weatherAppIcons/map.svg";
+    rainIcon = WEATHER_ICONS + "/weatherAppIcons/rain.svg";
+    snowIcon = WEATHER_ICONS + "/weatherAppIcons/snow.svg";
+    stormIcon = WEATHER_ICONS + "/weatherAppIcons/storm.svg";
+    thermometerIcon = WEATHER_ICONS + "/weatherAppIcons/thermometer.svg";
+    arrowBackIcon = WEATHER_ICONS + "/weatherAppIcons/arrowBack.svg";
+
     cityName = "";
     loadingText = "";
     isError = false;

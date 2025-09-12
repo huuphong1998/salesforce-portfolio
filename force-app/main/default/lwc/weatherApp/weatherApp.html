@@ -25,25 +25,29 @@
             </section>
 
             <section class="slds-var-m-around_large slds-text-align_center">
+                <img src={cloudIcon} alt="weather icon" class="weatherImage" />
                 <div class="temperature">
                     <span>12</span>
                     <span>°</span>C
                 </div>
                 <div class="description">Clear sky</div>
                 <div class="location">
+                    <img src={mapIcon} alt="location icon" />
                     <span>London, GB</span>
                 </div>
             </section>
 
             <footer class="slds-grid slds-grid_align-space slds-text-align_center">
-                <div class="feels_like">
+                <div class="feels_like slds-container_fluid">
                     <div>
+                        <img src={thermometerIcon} alt="thermometer icon" />
                         <div>11°C</div>
-                        <p>Feels like</p>
                     </div>
+                    <p>Feels like</p>
                 </div>
-                <div class="humidity">
+                <div class="humidity slds-container_fluid">
                     <div>
+                        <img src={dropletIcon} alt="droplet icon" />
                         <div>83%</div>
                     </div>
                     <p>Humidity</p>
