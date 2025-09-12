@@ -6,13 +6,14 @@
                 <h1>Weather App</h1>
             </header>
             <section class="slds-p-around_large">
-                <form>
+                <form onsubmit={submitHandler}>
                     <input
                         type="text"
                         placeholder="Enter city name"
                         required
                         spellcheck="false"
                         class="slds-container_fluid slds-text-align_center slds-text-link_reset:active"
+                        onkeyup={searchHandler}
                     />
                     <button type="submit" class="slds-var-m-top_large slds-container_fluid slds-text-link_reset:active">
                         Search
