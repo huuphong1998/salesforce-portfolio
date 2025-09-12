@@ -84,3 +84,7 @@ footer {
 .weatherImage {
     max-width: 125px;
 }
+
+.cursor {
+    cursor: pointer;
+}

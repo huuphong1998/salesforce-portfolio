@@ -3,56 +3,70 @@
     <div class="app slds-grid slds-grid_align-center slds-media_center">
         <div class="app-card">
             <header class="slds-grid slds-grid_align-center slds-media_center">
+                <template if:true={response}>
+                    <img
+                        src={arrowBackIcon}
+                        alt="back arrow"
+                        onclick={backHandler}
+                        class="slds-var-m-right_medium cursor"
+                    />
+                </template>
                 <h1>Weather App</h1>
             </header>
             <template if:true={loadingText}>
                 <div class={loadingClasses}>{loadingText}</div>
             </template>
-            <section class="slds-p-around_large">
-                <form onsubmit={submitHandler}>
-                    <input
-                        type="text"
-                        placeholder="Enter city name"
-                        required
-                        spellcheck="false"
-                        class="slds-container_fluid slds-text-align_center slds-text-link_reset:active"
-                        onkeyup={searchHandler}
-                    />
-                    <button type="submit" class="slds-var-m-top_large slds-container_fluid slds-text-link_reset:active">
-                        Search
-                    </button>
-                </form>
-            </section>
-
-            <section class="slds-var-m-around_large slds-text-align_center">
-                <img src={cloudIcon} alt="weather icon" class="weatherImage" />
-                <div class="temperature">
-                    <span>12</span>
-                    <span>°</span>C
-                </div>
-                <div class="description">Clear sky</div>
-                <div class="location">
-                    <img src={mapIcon} alt="location icon" />
-                    <span>London, GB</span>
-                </div>
-            </section>
-
-            <footer class="slds-grid slds-grid_align-space slds-text-align_center">
-                <div class="feels_like slds-container_fluid">
-                    <div>
-                        <img src={thermometerIcon} alt="thermometer icon" />
-                        <div>11°C</div>
+            <template if:false={response}>
+                <section class="slds-p-around_large">
+                    <form onsubmit={submitHandler}>
+                        <input
+                            type="text"
+                            placeholder="Enter city name"
+                            required
+                            spellcheck="false"
+                            class="slds-container_fluid slds-text-align_center slds-text-link_reset:active"
+                            onkeyup={searchHandler}
+                        />
+                        <button
+                            type="submit"
+                            class="slds-var-m-top_large slds-container_fluid slds-text-link_reset:active"
+                        >
+                            Search
+                        </button>
+                    </form>
+                </section>
+            </template>
+            <template if:true={response}>
+                <section class="slds-var-m-around_large slds-text-align_center">
+                    <img src={weatherIcon} alt="weather icon" class="weatherImage" />
+                    <div class="temperature">
+                        <span>{response.temperature}</span>
+                        <span>°</span>C
                     </div>
-                    <p>Feels like</p>
-                </div>
-                <div class="humidity slds-container_fluid">
-                    <div>
-                        <img src={dropletIcon} alt="droplet icon" />
-                        <div>83%</div>
+                    <div class="description">{response.description}</div>
+                    <div class="location">
+                        <img src={mapIcon} alt="location icon" />
+                        <span>{response.location}</span>
                     </div>
-                    <p>Humidity</p>
-                </div>
-            </footer>
+                </section>
+
+                <footer class="slds-grid slds-grid_align-space slds-text-align_center">
+                    <div class="feels_like slds-container_fluid">
+                        <div>
+                            <img src={thermometerIcon} alt="thermometer icon" />
+                            <div>{response.feels_like}°C</div>
+                        </div>
+                        <p>Feels like</p>
+                    </div>
+                    <div class="humidity slds-container_fluid">
+                        <div>
+                            <img src={dropletIcon} alt="droplet icon" />
+                            <div>{response.humidity}</div>
+                        </div>
+                        <p>Humidity</p>
+                    </div>
+                </footer>
+            </template>
         </div>
     </div>
 </template>
