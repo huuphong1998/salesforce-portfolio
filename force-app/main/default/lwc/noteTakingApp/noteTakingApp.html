@@ -1,5 +1,5 @@
 <template>
-    <div class="app">
+    <div class="app slds-grid slds-dl_horizontal">
         <div class="box slds-grid slds-grid_vertical slds-grid_align-center slds-media_center cursor-pointer">
             <div class="dotted-circle">
                 <lightning-icon
@@ -11,6 +11,32 @@
                 ></lightning-icon>
             </div>
             <h2>Add New Note</h2>
+        </div>
+
+        <div class="box slds-var-m-bottom_medium">
+            <header>
+                <h2 class="slds-truncate">Note Heading</h2>
+            </header>
+            <div class="notes">descrition text will come here</div>
+            <footer class="slds-grid slds-grid_align-spread slds-media_center">
+                <div class="date">Tue Jan 10 2025</div>
+                <div>
+                    <lightning-icon
+                        icon-name="action:edit"
+                        alternative-text="edit"
+                        size="xx-small"
+                        title="edit note"
+                        class="edit-icon slds-var-m-right_xx-small"
+                    ></lightning-icon>
+                    <lightning-icon
+                        icon-name="action:delete"
+                        alternative-text="delete"
+                        size="xx-small"
+                        title="delete"
+                        class="delete-icon"
+                    ></lightning-icon>
+                </div>
+            </footer>
         </div>
     </div>
 </template>
