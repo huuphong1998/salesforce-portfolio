@@ -53,9 +53,19 @@ export default class NoteTakingApp extends LightningElement {
         createNoteRecord({ title: this.noteRecord.Name, description: this.noteRecord.Note_Description__c })
             .then(() => {
                 this.showModal = false;
+                this.showToastMsg("Note created successfully", "success");
+                this.noteRecord = DEFAULT_NOTE_FORM;
             })
             .catch((error) => {
                 console.error("error", error.message.body);
+                this.showToastMsg(error.message.body, "error");
             });
+    }
+
+    showToastMsg(message, variant) {
+        const elem = this.template.querySelector("c-notification");
+        if (elem) {
+            elem.showToast(message, variant);
+        }
     }
 }
