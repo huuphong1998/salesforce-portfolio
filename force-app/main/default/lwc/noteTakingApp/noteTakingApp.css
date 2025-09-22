@@ -63,7 +63,7 @@ header {
     padding: 4px 16px;
 }
 
-footer {
+.footer {
     padding: 4px 16px;
     background: var(--light-gray);
     border-bottom-left-radius: 12px;

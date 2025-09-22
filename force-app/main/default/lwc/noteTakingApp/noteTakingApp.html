@@ -1,6 +1,9 @@
 <template>
     <div class="app slds-grid slds-dl_horizontal">
-        <div class="box slds-grid slds-grid_vertical slds-grid_align-center slds-media_center cursor-pointer">
+        <div
+            class="box slds-grid slds-grid_vertical slds-grid_align-center slds-media_center cursor-pointer"
+            onclick={createNoteHandler}
+        >
             <div class="dotted-circle">
                 <lightning-icon
                     class="custom-icon"
@@ -18,7 +21,7 @@
                 <h2 class="slds-truncate">Note Heading</h2>
             </header>
             <div class="notes">descrition text will come here</div>
-            <footer class="slds-grid slds-grid_align-spread slds-media_center">
+            <footer class="slds-grid slds-grid_align-spread slds-media_center footer">
                 <div class="date">Tue Jan 10 2025</div>
                 <div>
                     <lightning-icon
@@ -39,4 +42,17 @@
             </footer>
         </div>
     </div>
+
+    <template if:true={showModal}>
+        <c-modal>
+            <h1 slot="header" class="slds-modal__title">Modal Heading</h1>
+            <div>I am body</div>
+            <footer slot="footer">
+                <button class="slds-button slds-button_neutral" onclick={closeModalHandler}>
+                    <label>Cancel</label>
+                </button>
+                <button class="slds-button slds-button_brand"><label>Save</label></button>
+            </footer>
+        </c-modal>
+    </template>
 </template>
