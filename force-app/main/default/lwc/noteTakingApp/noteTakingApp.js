@@ -2,6 +2,7 @@ import { LightningElement, wire } from "lwc";
 import createNoteRecord from "@salesforce/apex/NoteTakingController.createNoteRecord";
 import getNotes from "@salesforce/apex/NoteTakingController.getNotes";
 import updateNoteRecord from "@salesforce/apex/NoteTakingController.updateNoteRecord";
+import { refreshApex } from "@salesforce/apex";
 
 const DEFAULT_NOTE_FORM = {
     Name: "",
@@ -12,6 +13,7 @@ export default class NoteTakingApp extends LightningElement {
     noteRecord = DEFAULT_NOTE_FORM;
     noteList = [];
     selectedRecordId;
+    wiredNoteResult;
     formats = [
         "font",
         "size",
@@ -39,7 +41,9 @@ export default class NoteTakingApp extends LightningElement {
     }
 
     @wire(getNotes)
-    noteListInfo({ data, error }) {
+    noteListInfo(result) {
+        this.wiredNoteResult = result;
+        const { data, error } = result;
         if (data) {
             console.log("data of notes", JSON.stringify(data));
             this.noteList = data.map((item) => {
@@ -81,8 +85,9 @@ export default class NoteTakingApp extends LightningElement {
         createNoteRecord({ title: this.noteRecord.Name, description: this.noteRecord.Note_Description__c })
             .then(() => {
                 this.showModal = false;
+                this.selectedRecordId = null;
                 this.showToastMsg("Note created successfully", "success");
-                this.noteRecord = DEFAULT_NOTE_FORM;
+                this.refresh();
             })
             .catch((error) => {
                 console.error("error", error.message.body);
@@ -114,10 +119,15 @@ export default class NoteTakingApp extends LightningElement {
             .then(() => {
                 this.showModal = false;
                 this.showToastMsg("Note Updated Successfully!!", "success");
+                this.refresh();
             })
             .catch((error) => {
                 console.error("error in updating", error);
                 this.showToastMsg(error.message.body, "error");
             });
+    }
+
+    refresh() {
+        return refreshApex(this.wiredNoteResult);
     }
 }
