@@ -1,4 +1,4 @@
-public with sharing class NoteTakingController {
+public without sharing class NoteTakingController {
     @AuraEnabled
     @SuppressWarnings('PMD.ApexCRUDViolation')
     public static Boolean createNoteRecord(String title, String description) {
