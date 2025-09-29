@@ -6,4 +6,12 @@
         <target>lightningCommunity__Page</target>
         <target>lightningCommunity__Default</target>
     </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="recordId" label="Record Id" type="String" />
+            <property name="linkedinUrl" label="Linkedin URL" type="String" />
+            <property name="githubUrl" label="Github URL" type="String" />
+            <property name="trailheadUrl" label="Trailhead URL" type="String" />
+        </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>
