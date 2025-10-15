@@ -13,7 +13,9 @@
                 <template if:true={recordId}>
                     <c-portfolio-work-experience record-id={recordId}></c-portfolio-work-experience></template
             ></lightning-tab>
-            <lightning-tab label="Skills"> Skills Content ! </lightning-tab>
+            <lightning-tab label="Skills"
+                ><template if:true={recordId}> <c-portfolio-skills record-id={recordId}></c-portfolio-skills></template
+            ></lightning-tab>
             <lightning-tab label="Education"> Education Content ! </lightning-tab>
             <lightning-tab label="Certifications"> Certifications Content ! </lightning-tab>
             <lightning-tab label="Others"> Others Content ! </lightning-tab>
