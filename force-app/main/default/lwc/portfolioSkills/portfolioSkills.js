@@ -5,6 +5,9 @@ import SOFT_SKILLS_FIELD from "@salesforce/schema/Portfolio__c.SoftSkills__c";
 import SOFTWARE_FIELD from "@salesforce/schema/Portfolio__c.SoftwareTools__c";
 
 export default class PortfolioSkills extends LightningElement {
+    techSkills = [];
+    softSkills = [];
+    toolsSkills = [];
     @api recordId;
     @wire(getRecord, {
         recordId: "$recordId",
@@ -13,9 +16,17 @@ export default class PortfolioSkills extends LightningElement {
     skilHandler({ data, error }) {
         if (data) {
             console.log("Skill Data", JSON.stringify(data));
+            this.formatSkills(data);
         }
         if (error) {
             console.error("Skill error", error);
         }
+    }
+
+    formatSkills(data) {
+        const { SoftSkills__c, SoftwareTools__c, TechnicalSkills__c } = data.fields;
+        this.techSkills = TechnicalSkills__c ? TechnicalSkills__c.value.split(",") : [];
+        this.softSkills = SoftSkills__c ? SoftSkills__c.value.split(",") : [];
+        this.toolsSkills = SoftwareTools__c ? SoftwareTools__c.value.split(",") : [];
     }
 }
