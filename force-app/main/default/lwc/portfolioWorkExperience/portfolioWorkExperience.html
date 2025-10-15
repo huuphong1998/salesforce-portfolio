@@ -45,7 +45,9 @@
                                 class="slds-box slds-timeline__item_details slds-theme_shade slds-var-m-top_x-small slds-var-m-horizontal_xx-small slds-var-p-around_medium"
                                 id="task-item-expanded-65"
                             >
-                                <div>{work.Description}</div>
+                                <div>
+                                    <c-portfolio-string-to-html content={work.Description}></c-portfolio-string-to-html>
+                                </div>
                             </article>
                         </div>
                     </div>
