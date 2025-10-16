@@ -5,7 +5,7 @@
             <header class="slds-grid slds-grid_align-center slds-media_center">
                 <template if:true={response}>
                     <img
-                        src={arrowBackIcon}
+                        srcset={arrowBackIcon}
                         alt="back arrow"
                         onclick={backHandler}
                         class="slds-var-m-right_medium cursor"
@@ -38,14 +38,14 @@
             </template>
             <template if:true={response}>
                 <section class="slds-var-m-around_large slds-text-align_center">
-                    <img src={weatherIcon} alt="weather icon" class="weatherImage" />
+                    <img srcset={weatherIcon} alt="weather icon" class="weatherImage" />
                     <div class="temperature">
                         <span>{response.temperature}</span>
                         <span>°</span>C
                     </div>
                     <div class="description">{response.description}</div>
                     <div class="location">
-                        <img src={mapIcon} alt="location icon" />
+                        <img srcset={mapIcon} alt="location icon" />
                         <span>{response.location}</span>
                     </div>
                 </section>
@@ -53,14 +53,14 @@
                 <footer class="slds-grid slds-grid_align-space slds-text-align_center">
                     <div class="feels_like slds-container_fluid">
                         <div>
-                            <img src={thermometerIcon} alt="thermometer icon" />
+                            <img srcset={thermometerIcon} alt="thermometer icon" />
                             <div>{response.feels_like}°C</div>
                         </div>
                         <p>Feels like</p>
                     </div>
                     <div class="humidity slds-container_fluid">
                         <div>
-                            <img src={dropletIcon} alt="droplet icon" />
+                            <img srcset={dropletIcon} alt="droplet icon" />
                             <div>{response.humidity}</div>
                         </div>
                         <p>Humidity</p>

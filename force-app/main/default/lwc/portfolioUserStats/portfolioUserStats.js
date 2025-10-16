@@ -10,7 +10,7 @@ export default class PortfolioUserStats extends LightningElement {
 
     renderedCallback() {
         if (this.rank) {
-            let url = `${PortfolioAssets}/PortfolioAssets/Ranks/${this.rank}.png`;
+            let url = `${PortfolioAssets}/PortfolioAssets/Ranks/${this.rank}.png 2x`;
             this.trailheadRankImg = url;
         }
     }

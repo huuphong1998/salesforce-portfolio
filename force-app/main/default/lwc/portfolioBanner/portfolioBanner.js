@@ -11,7 +11,7 @@ export default class PortfolioBanner extends LightningElement {
     @api trailheadUrl; //= "https://www.salesforce.com/trailblazer/huuphong";
     @api githubUrl; //= "https://github.com/huuphong1998";
 
-    userPic = `${PortfolioAssets}/PortfolioAssets/user.jpeg`;
+    userPic = `${PortfolioAssets}/PortfolioAssets/user.jpeg 2x`;
     linkedin = `${PortfolioAssets}/PortfolioAssets/Social/linkedin.svg`;
     github = `${PortfolioAssets}/PortfolioAssets/Social/github.svg`;
     trailhead = `${PortfolioAssets}/PortfolioAssets/Social/trailhead1.svg`;

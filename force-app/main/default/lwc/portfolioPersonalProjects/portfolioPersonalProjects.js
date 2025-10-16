@@ -2,12 +2,12 @@ import { LightningElement } from "lwc";
 import PortfolioAssets from "@salesforce/resourceUrl/PortfolioAssets";
 
 export default class PortfolioPersonalProjects extends LightningElement {
-    BMICalculator = `${PortfolioAssets}/PortfolioAssets/Projects/BMICalculator.png`;
-    AlarmClock = `${PortfolioAssets}/PortfolioAssets/Projects/AlarmClock.png`;
-    CurrencyCalculator = `${PortfolioAssets}/PortfolioAssets/Projects/CurrencyCalculator.png`;
-    WeatherApp = `${PortfolioAssets}/PortfolioAssets/Projects/WeatherApp.png`;
-    SurveyApp = `${PortfolioAssets}/PortfolioAssets/Projects/Survey.png`;
-    NoteApp = `${PortfolioAssets}/PortfolioAssets/Projects/NoteTakingApp.png`;
+    BMICalculator = `${PortfolioAssets}/PortfolioAssets/Projects/BMICalculator.png 2x`;
+    AlarmClock = `${PortfolioAssets}/PortfolioAssets/Projects/AlarmClock.png 2x`;
+    CurrencyCalculator = `${PortfolioAssets}/PortfolioAssets/Projects/CurrencyCalculator.png 2x`;
+    WeatherApp = `${PortfolioAssets}/PortfolioAssets/Projects/WeatherApp.png 2x`;
+    SurveyApp = `${PortfolioAssets}/PortfolioAssets/Projects/Survey.png 2x`;
+    NoteApp = `${PortfolioAssets}/PortfolioAssets/Projects/NoteTakingApp.png 2x`;
 
     projects = [
         {
