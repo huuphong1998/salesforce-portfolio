@@ -25,11 +25,13 @@ export default class PortfolioCertifications extends LightningElement {
     }
     formatData(data) {
         const { OtherCertifications__c, SalesforceCertifications__c } = data.fields;
-        this.sfCertsList = SalesforceCertifications__c
-            ? SalesforceCertifications__c.value.split(";").map((item) => {
-                  return `Salesforce Certified ${item}`;
-              })
-            : [];
-        this.otherCertsList = OtherCertifications__c ? OtherCertifications__c.value.split(",") : [];
+
+        const sfRaw =
+            SalesforceCertifications__c && SalesforceCertifications__c.value ? SalesforceCertifications__c.value : "";
+        const otherRaw = OtherCertifications__c && OtherCertifications__c.value ? OtherCertifications__c.value : "";
+
+        this.sfCertsList = sfRaw ? sfRaw.split(";").map((item) => `Salesforce Certified ${item}`) : [];
+
+        this.otherCertsList = otherRaw ? otherRaw.split(",") : [];
     }
 }
